@@ -12,21 +12,13 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Development',
+            template: './src/index.pug',
+            inject: true
         }),
     ],
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
-    },
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -38,6 +30,15 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.pug$/,
+                use: ['pug-loader']
+            },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],

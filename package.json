@@ -19,6 +19,7 @@
     "html-webpack-plugin": "^5.3.1",
     "json5": "^2.2.0",
     "lodash-es": "^4.17.21",
+    "pug-loader": "^2.4.0",
     "style-loader": "^2.0.0",
     "toml": "^3.0.0",
     "ts-loader": "^9.1.2",
